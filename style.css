@@ -1,0 +1,126 @@
+* {
+    color: #FAF9F6;
+    font-family: "Epunda Slab";
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #191919;
+}
+
+nav {
+    padding: 20px 0;
+
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration:  none;
+    }
+}
+
+/*  */
+
+#scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+#scroll-text {
+    display: inline-flex;
+    padding-left: 100%;
+    animation: scroll-left 5s linear infinite;
+    color: #fff;
+    font-size: 50rem;
+    line-height: max(80%);
+}
+
+/*@keyframes scroll-left {*/
+/*    0% {*/
+/*        transform: translateX(0);*/
+/*    }*/
+/*    100% {*/
+/*        transform: translateX(-100%);*/
+/*    }*/
+/*}*/
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+
+    .card {
+        position: relative;
+        flex: 1 1 100%;
+        height: 33.33vh;
+        overflow: hidden;
+
+        @media (min-width: 768px) {
+            flex: 1 1 33.33%;
+            height: 100vh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: clamp(1rem, 3vw, 3rem);
+            background: rgba(0, 0, 0, 0.5);
+            color: #FAF9F6;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-y: auto;
+
+            p:first-of-type {
+                font-weight: 600;
+                font-size: clamp(1.5rem, 2.5vw, 3rem);
+                margin-bottom: clamp(0.5rem, 1.5vw, 1.5rem);
+            }
+
+            p, ol, li {
+                margin-bottom: clamp(0.25rem, 1vw, 1rem);
+                font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+                font-weight: 300;
+            }
+
+            ol {
+                padding-left: 1.2em;
+                text-align: left;
+                max-width: 90%;
+            }
+        }
+    }
+}
+
+
+/* Footer */
+
+footer {
+    display: flex;
+
+
+}
