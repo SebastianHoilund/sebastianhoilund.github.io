@@ -1,6 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     color: #FAF9F6;
-    font-family: "Epunda Slab";
+    font-family: "Epunda Slab", sans-serif;
     font-weight: 300;
     margin: 0;
     padding: 0;
@@ -20,10 +24,12 @@ nav {
 
     li {
         list-style: none;
+        padding: 0 clamp(0.5rem, 1vw, 1.5rem);
     }
 
     a {
         text-decoration:  none;
+        font-size: clamp(1.5rem, 2.5vw, 3rem);
     }
 }
 
@@ -46,14 +52,14 @@ nav {
     line-height: max(80%);
 }
 
-/*@keyframes scroll-left {*/
-/*    0% {*/
-/*        transform: translateX(0);*/
-/*    }*/
-/*    100% {*/
-/*        transform: translateX(-100%);*/
-/*    }*/
-/*}*/
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 .card-row {
     display: flex;
@@ -90,18 +96,27 @@ nav {
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: center; /* centers brødtekst */
             align-items: center;
             text-align: center;
             overflow-y: auto;
 
+            /* Title pinned at top */
             p:first-of-type {
+                position: absolute;
+                top: clamp(1rem, 2vw, 2rem); /* same offset for all cards */
+                left: 50%;
+                transform: translateX(-50%);
                 font-weight: 600;
                 font-size: clamp(1.5rem, 2.5vw, 3rem);
-                margin-bottom: clamp(0.5rem, 1.5vw, 1.5rem);
+                margin: 0;
+                opacity: 1;
             }
 
-            p, ol, li {
+            /* Brødtekst stays in the middle */
+            p:not(:first-of-type),
+            ol,
+            li {
                 margin-bottom: clamp(0.25rem, 1vw, 1rem);
                 font-size: clamp(0.9rem, 1.2vw, 1.4rem);
                 font-weight: 300;
@@ -116,6 +131,20 @@ nav {
     }
 }
 
+/* Hide brødtekst initially */
+.card-text p:not(:first-of-type),
+.card-text ol,
+.card-text li {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show brødtekst on hover */
+.card:hover .card-text p:not(:first-of-type),
+.card:hover .card-text ol,
+.card:hover .card-text li {
+    opacity: 1;
+}
 
 /* Footer */
 
