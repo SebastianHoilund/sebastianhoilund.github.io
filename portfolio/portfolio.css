@@ -28,7 +28,7 @@ nav {
     }
 
     a {
-        text-decoration:  none;
+        text-decoration: none;
         font-size: clamp(1.5rem, 2.5vw, 3rem);
     }
 }
@@ -56,6 +56,7 @@ nav {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -115,7 +116,9 @@ nav {
             }
 
             /* Brødtekst */
-            p:not(:first-of-type), ol, li {
+            p:not(:first-of-type),
+            ol,
+            li {
                 margin-bottom: clamp(0.25rem, 1vw, 1rem);
                 font-size: clamp(0.9rem, 1.2vw, 1.4rem);
                 font-weight: 300;
