@@ -145,7 +145,7 @@ function getGradeInformation() {
 
 
     // Evaluate overall class performance
-    const getClassAverage = () => chosenGrades.reduce((sum, grade) => sum + grade, 0) / chosenGrades.length;
+    const getClassAverage = () => chosenGrades.reduce((sum, grade) => sum + grade) / chosenGrades.length;
 
     function getClassPerformance() {
         const classAverage = getClassAverage();
