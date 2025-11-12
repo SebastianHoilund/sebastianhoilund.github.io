@@ -93,6 +93,7 @@ async function loadStateAndRender(stateCode) {
 
     if (f.minFat === 0) f.minFat = null;
     if (f.minSpeed === 0) f.minSpeed = null;
+    if (f.minSpeed === 0) f.minSpeed = null;
 
     const hasActiveFilters = f.minSpeed !== null || f.maxAlt !== null || f.minAlt !== null || f.minFat !== null || f.minYear !== null;
 

@@ -17,12 +17,14 @@
         <div id="map"></div>
         <aside>
             <form id="filters">
-                <label>Min speed <input id="minSpeed" type="number" min="0" value="0"></label>
-                <label>Max altitude <input id="maxAlt" type="number" min="0" placeholder="10000"></label>
-                <label>Min altitude <input id="minAlt" type="number" min="0" value="0"></label>
-                <label>Min fatalities <input id="minFat" type="number" min="0" value="0"></label>
-                <label>Min year <input id="minYear" type="number" min="1900" value="1900"></label>
-                <label>Show amount <input id="maxRecords" type="number" min="1" value="10"></label>
+                <label>Min speed <input id="minSpeed" type="text" inputmode="numeric" pattern="[0-9]*" min="0"></label>
+                <label>Max altitude <input id="maxAlt" type="text" inputmode="numeric" pattern="[0-9]*" min="0"></label>
+                <label>Min altitude <input id="minAlt" type="text" inputmode="numeric" pattern="[0-9]*" min="0"></label>
+                <label>Min fatalities <input id="minFat" type="text" inputmode="numeric" pattern="[0-9]*"
+                        min="0"></label>
+                <label>Min year <input id="minYear" type="text" inputmode="numeric" pattern="[0-9]*" min="1900"></label>
+                <label>Show amount <input id="maxRecords" type="text" inputmode="numeric" pattern="[0-9]*" min="1"
+                        value="10"></label>
             </form>
             <hr>
             <h2 id="stateTitle">Click a state</h2>
