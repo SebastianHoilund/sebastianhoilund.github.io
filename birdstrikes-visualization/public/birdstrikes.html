@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>US Bird Strikes</title>
+
+    <link rel="stylesheet" href="birdstrikes.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <div id="map"></div>
+        <aside>
+            <form id="filters">
+                <label>Min speed <input id="minSpeed" type="number" min="0" value="0"></label>
+                <label>Max altitude <input id="maxAlt" type="number" min="0" placeholder="10000"></label>
+                <label>Min altitude <input id="minAlt" type="number" min="0" value="0"></label>
+                <label>Min fatalities <input id="minFat" type="number" min="0" value="0"></label>
+                <label>Min year <input id="minYear" type="number" min="1900" value="1900"></label>
+                <label>Show amount <input id="maxRecords" type="number" min="1" value="10"></label>
+            </form>
+            <hr>
+            <h2 id="stateTitle">Click a state</h2>
+            <div id="stateCount"></div>
+            <form id="sorting">
+                <label>Sort by
+                    <select id="sortBy">
+                        <option value="date">Date</option>
+                        <option value="speed_kts">Speed</option>
+                        <option value="altitude_ft">Altitude</option>
+                        <option value="fatalities">Fatalities</option>
+                        <option value="year">Year</option>
+                    </select>
+                </label>
+                <label>Order
+                    <select id="sortOrder">
+                        <option value="desc">Descending</option>
+                        <option value="asc">Ascending</option>
+                    </select>
+                </label>
+            </form>
+            <hr>
+            <ol id="resultList">
+            </ol>
+        </aside>
+    </main>
+
+    <script src="birdstrikes.js"></script>
+</body>
+
+</html>
