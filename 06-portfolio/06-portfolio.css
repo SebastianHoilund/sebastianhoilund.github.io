@@ -24,5 +24,11 @@ nav ul li{
 nav ul li:hover{
     background-color: #d0f0f0;
     color: #333;
+}
 
+#genderChart{
+    max-width: 450px;
+    max-height: 250px;
+    width: 100%;
+    height: auto;
 }
