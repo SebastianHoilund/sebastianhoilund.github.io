@@ -32,3 +32,67 @@ nav ul li:hover{
     width: 100%;
     height: auto;
 }
+/* STACKED CHARTS - én kolonne (scroll) */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* EN KOLONNE */
+    gap: 18px;
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/* Card wrapper for each chart */
+.chart-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 16px;
+    height: 340px;              /* lidt mere højde for lodrette charts */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Chart title */
+.chart-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+/* Chart canvas styling - fylder kortet pænt ud */
+.chart-card canvas {
+    width: 100% !important;
+    height: calc(100% - 54px) !important; /* plads til titel + meta */
+    max-height: 260px;
+    object-fit: contain;
+}
+
+/* Small helper text under chart */
+.chart-meta {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Fjern hover-effekt for mindre bevægelse på scroll */
+.chart-card:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Mobile adjustments */
+@media (max-width: 520px) {
+    .chart-card { height: 320px; padding: 14px; }
+    .chart-title { font-size: 14px; }
+    .chart-card canvas { height: calc(100% - 50px) !important; max-height: 240px; }
+}
+
+/* Juster main padding */
+main {
+    padding-top: 8px;
+    padding-bottom: 40px;
+}
