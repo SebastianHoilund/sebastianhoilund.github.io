@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         type: 'bar',
         data: {
             labels: ['Kvinders jobs', 'IT-jobs (mænd)'],
-            datasets: [{ data: [35128, 47475], backgroundColor: ['#FF6384', '#36A2EB'] }]
+            datasets: [{ data: [35.128, 47.475], backgroundColor: ['#FF6384', '#36A2EB'] }]
         },
         options: {
             responsive: true,

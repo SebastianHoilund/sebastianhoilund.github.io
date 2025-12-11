@@ -1,5 +1,6 @@
 body {
-    background-color: #dcece9;
+
+    background: linear-gradient(to bottom, #dcece9, lightskyblue);
 }
 
 nav ul{
