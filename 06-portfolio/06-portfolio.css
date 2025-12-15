@@ -1,99 +1,180 @@
 body {
-
-    background: linear-gradient(to bottom, #dcece9, lightskyblue);
+    background: hsl(228, 12%, 8%);
+    color: #f8f9fc;
+    font-family: "Google Sans Flex";
 }
 
-nav ul{
-    display: inline-flex;
+#landing {
+    height: 100vh;
+    width: 100%;
+}
+
+/*
+
+ TITLE
+
+*/
+
+#title-div {
+    height: 75vh;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    align-content: center;
+}
+
+#subtitle {
+    color: hsl(0, 0%, 44%);
+    font-weight: 500;
+
+    font-size: clamp(1rem, 4vw + 1rem, 3rem);
+}
+
+#title {
+    font-size: clamp(2rem, 4vw + 1rem, 5rem);
+    font-weight: 600;
+}
+
+/*
+
+ NAV
+
+*/
+
+nav {
+    display: flex;
     justify-content: center;
-    background-color: white;
-    border-radius: 50px;
-    padding: 4px;
-    list-style:none;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(80vw, max-content);
+    min-width: 16rem;
+    max-width: 42rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #18191d;
+    border-radius: 3rem;
+    padding: 0.25rem;
+    list-style: none;
     margin: 0;
     width: fit-content;
-}
-
-nav ul li{
-    margin: 0 15px;
-    border-radius: 25px;
-    background-color: #f0f0f0;
-    padding: 8px 16px;
-
-}
-
-nav ul li:hover{
-    background-color: #d0f0f0;
-    color: #333;
-}
-
-#genderChart{
-    max-width: 450px;
-    max-height: 250px;
     width: 100%;
-    height: auto;
 }
-/* STACKED CHARTS - én kolonne (scroll) */
+
+nav ul li {
+    margin: 0 1rem;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-size: clamp(0.95rem, 1vw + 0.6rem, 1.2rem);
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.3s ease;
+}
+
+nav ul li:hover {
+    background-color: #d0f0f0;
+    color: #121317;
+    cursor: pointer;
+}
+
+/*
+
+ CHARTS
+
+*/
+
 .charts-grid {
     display: grid;
-    grid-template-columns: 1fr; /* EN KOLONNE */
-    gap: 18px;
-    max-width: 900px;
-    margin: 24px auto;
-    padding: 0 16px;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 1.25rem;
+    max-width: 60rem;
+    margin: 1.5rem auto;
+    padding: 0 1.25rem;
 }
 
 /* Card wrapper for each chart */
 .chart-card {
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    padding: 16px;
-    height: 340px;              /* lidt mere højde for lodrette charts */
+    border-radius: 0.75rem;
+    box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.12);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    min-height: clamp(18rem, 24vw, 22rem);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: stretch;
+    gap: 0.75rem;
 }
 
 /* Chart title */
 .chart-title {
-    font-size: 15px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     font-weight: 600;
-    color: #111;
-    margin-bottom: 8px;
+    color: #939393;
+    margin-bottom: 0.5rem;
     text-align: left;
 }
 
 /* Chart canvas styling - fylder kortet pænt ud */
 .chart-card canvas {
     width: 100% !important;
-    height: calc(100% - 54px) !important; /* plads til titel + meta */
-    max-height: 260px;
+    height: auto !important;
+    flex: 1;
     object-fit: contain;
 }
 
 /* Small helper text under chart */
 .chart-meta {
-    font-size: 12px;
+    font-size: 0.85rem;
     color: #666;
-    margin-top: 8px;
+    margin-top: 0.5rem;
 }
 
 /* Fjern hover-effekt for mindre bevægelse på scroll */
 .chart-card:hover {
     transform: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.12);
+}
+
+.chart-container {
+    display: flex;
 }
 
 /* Mobile adjustments */
-@media (max-width: 520px) {
-    .chart-card { height: 320px; padding: 14px; }
-    .chart-title { font-size: 14px; }
-    .chart-card canvas { height: calc(100% - 50px) !important; max-height: 240px; }
+@media (max-width: 32.5rem) {
+    .chart-card {
+        min-height: clamp(17rem, 60vw, 20rem);
+        padding: 0.9rem;
+    }
+    .chart-title {
+        font-size: clamp(0.95rem, 4vw, 1.05rem);
+    }
+}
+
+@media (max-width: 650px) {
+    nav {
+        width: 90vw;
+        min-width: 0;
+        max-width: none;
+    }
+    nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+    nav ul li {
+        flex: 0 0 auto;
+    }
 }
 
 /* Juster main padding */
 main {
-    padding-top: 8px;
-    padding-bottom: 40px;
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
 }
