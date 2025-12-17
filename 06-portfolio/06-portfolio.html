@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./images/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="1024x1024" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./resetStyling.css">
     <link rel="stylesheet" href="./06-portfolio.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -14,107 +15,169 @@
         href="https://fonts.googleapis.com/css2?family=Asimovian&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <title>title</title>
+    <title>Et stærkere Danmark</title>
 </head>
 
-<body>
+<body id="top">
     <div id="landing">
         <div id="title-div">
             <p id="subtitle">BanB.JS</p>
-            <h1 id="title">Flere kvinder i IT - stærkere løsninger, stærkere Danmark</h1>
+            <h1 id="title">Flere kvinder i IT - <br>stærkere løsninger, <br>stærkere Danmark</h1>
         </div>
 
         <nav>
             <ul>
-                <li>Landsfordeling</li>
-                <li id="lon">Løn</li>
-                <li>Kønsfordeling</li>
-                <li>Karakter kvotient</li>
+                <li><a href="#løn" class="nav-links">Løn</a></li>
+                <li><a href="#differentEducations" class="nav-links">Fagvalg</a></li>
+                <li><a href="#gender" class="nav-links">Kønsfordeling</a></li>
+                <li><a href="#sabbatical" class="nav-links">Sabbatår</a></li>
+                <li><a href="#age" class="nav-links">Alder</a></li>
             </ul>
         </nav>
     </div>
 
-
     <main>
 
-        <section>
+        <section id="løn" class="chart-section">
             <div class="chart-container">
-                <div id="stats charts-grid">
+                <div class="chart-text">
+                    <p class="eyebrow">Løn-gab</p>
+                    <h2>Forestil dig 35% mere i løn</h2>
+                    <p>
+                        Hvis du i dag arbejder som pædagog, sygeplejerske eller SOSU-assistent, tjener du i gennemsnit
+                        35% mindre end dem, der arbejder med IT. Det er ikke småpenge - det er forskellen mellem at
+                        kunne spare op til drømmeferien, sikre din fremtid eller bare have råd til det ekstra.
+                    </p>
+                    <p>
+                        <strong>Du fortjener mere.</strong> IT-branchen byder på spændende jobs med fleksibilitet,
+                        udvikling og en løn der afspejler dit værd. Og det bedste? Du behøver ikke være "nørd" for at
+                        passe ind - vi har brug for netop DIN erfaring og perspektiv.
+                    </p>
+                </div>
+                <div class="chart-card charts-grid">
                     <div class="chart-title">Lønforskel</div>
                     <canvas id="wageDiffernceChart"></canvas>
-                    <div class="chart-meta">Kvinders jobs vs IT-mænd</div>
-                </div>
-                <div id="stats-text">
-                    <p>
-                        135%!!!
-                    </p>
+                    <div class="chart-meta">
+                        <p>
+                            Gennemsnitlig månedsløn: Kvindedominerede fag (ca. 35.000 kr.) vs. IT-jobs (ca 47.000 kr.)
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="differentEducations" class="chart-section">
             <div class="chart-container">
-                <div id="stats charts-grid">
+                <div class="chart-text">
+                    <p class="eyebrow">Fagvalg</p>
+                    <h2>Du er ikke alene</h2>
+                    <p>
+                        Måske tror du, at IT er en mandeverden? Kig på tallene. Kvinder er allerede i gang med at erobre
+                        IT-branchen - og de trives! Fra dataanalyse til webudvikling, UX-design til projektledelse.
+                    </p>
+                    <p>
+                        Andre kvinder har allerede taget springet og opdaget, at deres erfaring fra sygepleje,
+                        undervisning eller service faktisk gør dem <strong>bedre</strong> til IT-jobs. Empati,
+                        kommunikation og problemløsning - det er guld værd i tech.
+                    </p>
+                    <p>
+                        <em>Hvis de kan, kan du også.</em>
+                    </p>
+                </div>
+                <div class="chart-card charts-grid">
+                    <div class="chart-title">Fordeling af kvinder i forskellige faggrupper</div>
+                    <canvas id="genderChart"></canvas>
+                    <div class="chart-meta">Procentdel kvinder i sundhed (80%), undervisning (70%), pleje (75%),
+                        administration (65%) og IT (28%)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gender" class="chart-section">
+            <div class="chart-container">
+                <div class="chart-text">
+                    <p class="eyebrow">Kønsfordeling</p>
+                    <h2>IT har brug for flere kvinder som dig</h2>
+                    <p>
+                        I dag er IT stadig mandsdomineret - men det behøver ikke at være sådan. Kvinder er blevet bevist
+                        at være lige så dygtige og dedikerede inden for tech som deres mandlige kolleger. Faktisk viser
+                        undersøgelser, at teams med diversitet innoverer bedre og udfører deres arbejde med større
+                        kvalitet.
+                    </p>
+                    <p>
+                        IT-branchen lider af mangel på talenter, og vi taber værdifulde kvinder til andre felter. Det er
+                        tab for industrien. Dit arbejdsomhed, din problemløsningsevne og din perspektiv er præcis det,
+                        som tech-verden har brug for.
+                    </p>
+                    <p>
+                        <strong>Branchen venter på dig.</strong> Kom og vær med til at ændre ansigtet på IT og gør det
+                        til et felt, hvor alle kan trives og lykkes.
+                    </p>
+                </div>
+                <div class="chart-card charts-grid">
                     <div class="chart-title">Kønsfordeling</div>
                     <canvas id="genderDifferenceChart"></canvas>
-                    <div class="chart-meta">Procentvis fordeling</div>
-                </div>
-                <div id="stats-text">
-                    <p>
-                        Her vises lønforskellen i de mest almene jobs til kvinder, sammenlignet med de mest almene jobs
-                        inde for
-                        IT-branchen.
-                        Som set på grafen, så tjener folk der arbejder med IT 135% mere.
-                    </p>
-
-                    <h2>
-                        KUN 13% FLERE MÆND END KVINDER
-                    </h2>
+                    <div class="chart-meta">Kønsfordeling blandt ansøgere til IT-uddannelser på EK</div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="sabbatical" class="chart-section">
             <div class="chart-container">
-                <div id="stats charts-grid">
-                    <div class="chart-title">Top 5 byer</div>
-                    <canvas id="regions"></canvas>
-                    <div class="chart-meta">Landsfordeling</div>
-                </div>
-                <div id="stats-text">
+                <div class="chart-text">
+                    <p class="eyebrow">Sabbatår</p>
+                    <h2>Du er ikke for sent på posten</h2>
                     <p>
-                        Der ses altså hvordan kønsfordelingen på skolen er fint fordelt, og man derfor vil lære en masse
-                        nye
-                        mennesker at kende fra de forskellige køn.
+                        Mange IT-studerende tog et sabbatår - eller flere - før de startede på
+                        uddannelse. Det viser, at det er helt normalt at tage tid til at arbejde, rejse, reflektere
+                        eller bare trække vejret, før man vender tilbage til uddannelse.
                     </p>
-
-                    <h3>
-                        ALLE er velkommen
-                    </h3>
+                    <p>
+                        IT-uddannelserne tiltrekker mennesker på alle stier i livet - ikke kun de unge lige ud af
+                        gymnasiet. Din erfaring fra andre år, andre jobs og andet arbejde gør dig til en bedre udvikler
+                        og kollega. Erfaringer og modenhed er værdifulde aktiver i tech.
+                    </p>
+                </div>
+                <div class="chart-card charts-grid">
+                    <div class="chart-title">Antal sabbatår</div>
+                    <canvas id="sabbaticalChart"></canvas>
+                    <div class="chart-meta">Antal sabbatår før uddannelse på EK</div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="age" class="chart-section">
             <div class="chart-container">
-                <div id="stats charts-grid">
-                    <div class="chart-title">Gennemsnitlig karakter</div>
-                    <canvas id="averageGradeChart"></canvas>
-                    <div class="chart-meta">Top 5 uddannelser</div>
-                </div>
-                <div id="stats-text">
+                <div class="chart-text">
+                    <p class="eyebrow">Alder</p>
+                    <h2>IT er for alle aldersgrupper</h2>
                     <p>
+                        Du er ikke for gammel eller for ung for IT! Vores studerende kommer i alle aldre - fra unge
+                        mennesker lige ud af gymnasiet til personer i 30'erne, 40'erne og derover, der ønsker at skifte
+                        karriere.
                     </p>
+                    <p>
+                        Uanset din alder er du velkommen. IT-branchen værdisætter modenhed, erfaring og diverse
+                        perspektiver lige så meget som energi og nysgerrighed. <strong>Din livserfarelse er en styrke,
+                            ikke en hindring.</strong>
+                    </p>
+                </div>
+                <div class="chart-card charts-grid">
+                    <div class="chart-title">Aldersfordeling</div>
+                    <canvas id="ageChart"></canvas>
+                    <div class="chart-meta">Fordeling af IT-uddannelsesansøgere efter alder</div>
                 </div>
             </div>
         </section>
 
-        <canvas id="genderChart" width="200" height="100" style="display:none; margin-top:20px;"></canvas>
+        <a href="#top" class="scroll-top-btn" aria-label="Scroll to top">
+            ↑
+        </a>
 
     </main>
 
     <footer>
-
+        <p>BanB.JS © 2025</p>
     </footer>
 
     <script src="./js/06-portfolio.js"></script>
